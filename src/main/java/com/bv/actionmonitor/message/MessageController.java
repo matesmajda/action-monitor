@@ -28,7 +28,6 @@ class MessageController {
             @Valid @NotNull @Size(min = 1, max = 255) @DestinationVariable("recipient") String recipient,
             Principal principal) {
 
-        System.out.println(principal);
         String sender = principal.getName();
         messageService.sendMessage(sender, recipient, messageContent);
     }
