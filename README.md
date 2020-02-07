@@ -4,7 +4,8 @@ This project is a chat-like application where users can send messages to each ot
 
 ### Requirements
 
-You need Java 8 with Maven 3 to build this project.
+You need Java 8 installed to run this project.
+You can replace mvn commands with `mvnw.cmd` in Windows or `./mvnw` in Linux if you don't have Maven installed.
 
 ### Running the application
 
