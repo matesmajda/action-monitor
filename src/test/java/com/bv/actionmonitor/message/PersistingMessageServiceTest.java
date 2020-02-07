@@ -3,19 +3,15 @@ package com.bv.actionmonitor.message;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 
 import java.util.Date;
 
 import static com.bv.actionmonitor.message.PersistingMessageService.MESSAGE_QUEUE_DESTINATION;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class PersistingMessageServiceTest {
@@ -31,7 +27,6 @@ class PersistingMessageServiceTest {
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.initMocks(this);
         messageService = new PersistingMessageService(messagingTemplate, repository, messageFactory);
     }
 
@@ -47,7 +42,6 @@ class PersistingMessageServiceTest {
         when(repository.save(messageEntity)).thenReturn(messageEntity);
 
         messageService.sendMessage(sender, recipient, content);
-
         verify(repository).save(messageEntity);
     }
 

@@ -2,7 +2,6 @@ package com.bv.actionmonitor.message;
 
 import com.bv.actionmonitor.util.SimpleStompSessionHandler;
 import com.bv.actionmonitor.util.UserMessageHandler;
-import org.apache.tomcat.util.codec.binary.Base64;
 import org.junit.Test;
 import org.junit.jupiter.api.Order;
 import org.junit.runner.RunWith;
