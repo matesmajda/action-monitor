@@ -39,7 +39,7 @@ And one websocket endpoint:
 -   `GET http://localhost:8080/messages` an endpoint for sending messages between users. 
     The client can upgrade to websocket protocol on this endpoint, however it is is wrapped in SockJS so clients without websocket support can use it too.
 
-    You can try it here: `http://localhost:8080/app.html`
+    You can try it here: `http://localhost:8080/app.html`.
     It uses basic authentication, the default users are: `user1`, `user2`, `user3`, password is `pass` for each of them.
 
 ### Experimenting and monitoring
@@ -89,3 +89,4 @@ The `recipient` is the part of the destination in a STOMP header, while the `con
 - Creating separate configuration for different environments.
 - Creating proper authentication
 - Creating stress tests 
+- Finetuning database and ActiveMQ: for example purging inactive destinations automatically
