@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Action Monitor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+
+<div id="chat-page">
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2 class="status-container">
+                <div class="not-connected">
+                    Not connected
+                </div>
+                <div class="connected hidden">
+                    <span>Connected as</span>
+                    <strong id="username"></strong>
+                </div>
+            </h2>
+        </div>
+
+        <ul id="messageArea">
+        </ul>
+        <form id="messageForm" name="messageForm">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">To:</div>
+                    </div>
+                    <select class="form-control" id="recipient" >
+                        <option value="user1">user1</option>
+                        <option value="user2">user2</option>
+                        <option value="user3">user3</option>
+                    </select>
+                    <input required maxlength="255" type="text" id="message" placeholder="Type a message..." autocomplete="off" class="form-control"/>
+                    <button type="submit" class="primary">Send</button>
+                </div>
+            </div>
+        </form>
+        <div>
+            <button id="connectButton" type="button" class="hidden primary">Reconnect</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="static/main.js"></script>
+</body>
+</html>
